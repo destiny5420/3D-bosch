@@ -29,12 +29,18 @@ export default {
           main: {
             object: null,
             dynamic: null,
+            target: null,
             position: {
-              x: 10,
-              y: 0,
-              z: 10
+              x: 2,
+              y: 1.5,
+              z: 5
             },
-            intensity: 1,
+            targetPos: {
+              x: -5,
+              y: 2,
+              z: -5
+            },
+            intensity: 3,
             minIntensity: 1,
             maxIntensity: 5
           },
@@ -61,14 +67,6 @@ export default {
         camera: null,
         control: null,
         box: null
-      },
-      rangeBar: {
-        min: -9.9,
-        max: 9.9,
-        step: 0.01,
-        x: 0,
-        y: 5,
-        z: 10
       }
     };
   },
@@ -109,7 +107,7 @@ export default {
       const near = 0.1; // the near clipping plane
       const far = 1000; // the far clipping plane
       vm.three.camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-      vm.three.camera.position.set(vm.rangeBar.x, vm.rangeBar.y, vm.rangeBar.z);
+      vm.three.camera.position.set(-5, 2, 11);
       vm.three.scene.add(vm.three.camera);
 
       // -- create renderer
@@ -132,6 +130,26 @@ export default {
     createLight: function(vm) {
       console.log("-- 2. Create Light --");
 
+      // -- target from main light.
+      const mainLightTargetGeometry = new THREE.SphereGeometry(0.25, 12, 12);
+      const mainLightTargetMaterial = new THREE.MeshBasicMaterial({
+        color: "#1dd1a1",
+        wireframe: true
+      });
+
+      vm.three.lights.main.target = new THREE.Mesh(
+        mainLightTargetGeometry,
+        mainLightTargetMaterial
+      );
+      vm.three.lights.main.target.position.set(
+        vm.three.lights.main.targetPos.x,
+        vm.three.lights.main.targetPos.y,
+        vm.three.lights.main.targetPos.z
+      );
+
+      vm.three.scene.add(vm.three.lights.main.target);
+
+      // -- main light
       vm.three.lights.main.object = new THREE.DirectionalLight(
         0xffffff,
         vm.three.lights.main.intensity
@@ -141,6 +159,8 @@ export default {
         vm.three.lights.main.position.y,
         vm.three.lights.main.position.z
       );
+      vm.three.lights.main.object.target = vm.three.lights.main.target;
+
       vm.three.scene.add(vm.three.lights.main.object);
     },
     createObject: function() {
@@ -148,13 +168,16 @@ export default {
       const vm = this;
 
       // create dynamic for main light
-      const cubeGeometry = new THREE.BoxBufferGeometry(1, 1, 1, 1, 1);
-      const cubeMaterial = new THREE.MeshLambertMaterial({
-        color: 0xffeeee,
+      const dynamicGeometry = new THREE.SphereGeometry(0.5, 12, 12);
+      const dynamicMaterial = new THREE.MeshBasicMaterial({
+        color: "#1dd1a1",
         wireframe: true
       });
 
-      vm.three.lights.main.dynamic = new THREE.Mesh(cubeGeometry, cubeMaterial);
+      vm.three.lights.main.dynamic = new THREE.Mesh(
+        dynamicGeometry,
+        dynamicMaterial
+      );
       vm.three.lights.main.dynamic.position.set(
         vm.three.lights.main.position.x,
         vm.three.lights.main.position.y,
@@ -204,11 +227,16 @@ export default {
     objectUpdate: function() {
       const vm = this;
 
-      // main light dynamic update
       vm.three.lights.main.dynamic.position.set(
         vm.three.lights.main.position.x,
         vm.three.lights.main.position.y,
         vm.three.lights.main.position.z
+      );
+
+      vm.three.lights.main.target.position.set(
+        vm.three.lights.main.targetPos.x,
+        vm.three.lights.main.targetPos.y,
+        vm.three.lights.main.targetPos.z
       );
     },
     lightUpdate: function() {

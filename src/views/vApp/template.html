@@ -35,6 +35,36 @@
             />
           </div>
           <div class="value-block">
+            <span class="title">t-X: {{ three.lights.main.targetPos.x }}</span>
+            <input
+              type="range"
+              min="-10"
+              max="10"
+              step="0.01"
+              v-model="three.lights.main.targetPos.x"
+            />
+          </div>
+          <div class="value-block">
+            <span class="title">t-Y: {{ three.lights.main.targetPos.y }}</span>
+            <input
+              type="range"
+              min="-10"
+              max="10"
+              step="0.01"
+              v-model="three.lights.main.targetPos.y"
+            />
+          </div>
+          <div class="value-block">
+            <span class="title">t-Z: {{ three.lights.main.targetPos.z }}</span>
+            <input
+              type="range"
+              min="-10"
+              max="10"
+              step="0.01"
+              v-model="three.lights.main.targetPos.z"
+            />
+          </div>
+          <div class="value-block">
             <span class="title"
               >Intensity: {{ three.lights.main.intensity }}</span
             >
