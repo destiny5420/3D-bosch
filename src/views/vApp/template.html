@@ -1,0 +1,111 @@
+<div class="main">
+  <div id="app">
+    <div id="console-panel">
+      <div id="light">
+        <div class="light-block">
+          <div>Main Light</div>
+          <div class="value-block">
+            <span class="title">X: {{ three.lights.main.position.x }}</span>
+            <input
+              type="range"
+              min="-10"
+              max="10"
+              step="0.01"
+              v-model="three.lights.main.position.x"
+            />
+          </div>
+          <div class="value-block">
+            <span class="title">Y: {{ three.lights.main.position.y }}</span>
+            <input
+              type="range"
+              min="-10"
+              max="10"
+              step="0.01"
+              v-model="three.lights.main.position.y"
+            />
+          </div>
+          <div class="value-block">
+            <span class="title">Z: {{ three.lights.main.position.z }}</span>
+            <input
+              type="range"
+              min="-10"
+              max="10"
+              step="0.01"
+              v-model="three.lights.main.position.z"
+            />
+          </div>
+          <div class="value-block">
+            <span class="title"
+              >Intensity: {{ three.lights.main.intensity }}</span
+            >
+            <input
+              type="range"
+              :min="three.lights.main.minIntensity"
+              :max="three.lights.main.maxIntensity"
+              step="0.01"
+              v-model="three.lights.main.intensity"
+            />
+          </div>
+        </div>
+        <div class="light-block">
+          <div>Second Light</div>
+          <div class="value-block">
+            <span class="title">X: {{ three.lights.second.position.x }}</span>
+            <input
+              type="range"
+              min="-10"
+              max="10"
+              step="0.01"
+              v-model="three.lights.second.position.x"
+            />
+          </div>
+          <div class="value-block">
+            <span class="title">Y: {{ three.lights.second.position.y }}</span>
+            <input
+              type="range"
+              min="-10"
+              max="10"
+              step="0.01"
+              v-model="three.lights.second.position.y"
+            />
+          </div>
+          <div class="value-block">
+            <span class="title">Z: {{ three.lights.second.position.z }}</span>
+            <input
+              type="range"
+              min="-10"
+              max="10"
+              step="0.01"
+              v-model="three.lights.second.position.z"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- X:
+    <input
+      type="range"
+      :min="rangeBar.min"
+      :max="rangeBar.max"
+      :step="rangeBar.step"
+      v-model="rangeBar.x"
+    /><br />
+    Y:
+    <input
+      type="range"
+      :min="rangeBar.min"
+      :max="rangeBar.max"
+      :step="rangeBar.step"
+      v-model="rangeBar.y"
+    /><br />
+    Z:
+    <input
+      type="range"
+      :min="rangeBar.min"
+      :max="rangeBar.max"
+      :step="rangeBar.step"
+      v-model="rangeBar.z"
+    /><br /> -->
+    <div id="three-main" ref="container"></div>
+  </div>
+</div>

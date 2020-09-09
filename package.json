@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "stats.js": "^0.17.0",
+    "three": "^0.120.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
