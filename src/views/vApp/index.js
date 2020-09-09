@@ -16,7 +16,7 @@ export default {
         },
         models: [
           {
-            path: "3D-bosch/models/model.glb"
+            path: "models/model.glb"
           }
         ],
         animations: {
