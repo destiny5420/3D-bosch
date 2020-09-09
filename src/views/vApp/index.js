@@ -16,7 +16,7 @@ export default {
         },
         models: [
           {
-            path: "/models/model.glb"
+            path: "models/model.glb"
           }
         ],
         animations: {
