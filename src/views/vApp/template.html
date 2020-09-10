@@ -1,6 +1,6 @@
 <div class="main">
   <div id="app">
-    <div id="console-panel">
+    <!-- <div id="console-panel">
       <div id="light">
         <div class="light-block">
           <div>Main Light</div>
@@ -111,31 +111,17 @@
           </div>
         </div>
       </div>
+    </div> -->
+    <div id="main-content">
+      <div id="three-main" ref="container"></div>
+      <div id="slogan">
+        <span
+          :id="'slogan-' + index"
+          v-for="(item, index) in sloganWords"
+          :key="index"
+          >{{ item }}</span
+        >
+      </div>
     </div>
-    <!-- X:
-    <input
-      type="range"
-      :min="rangeBar.min"
-      :max="rangeBar.max"
-      :step="rangeBar.step"
-      v-model="rangeBar.x"
-    /><br />
-    Y:
-    <input
-      type="range"
-      :min="rangeBar.min"
-      :max="rangeBar.max"
-      :step="rangeBar.step"
-      v-model="rangeBar.y"
-    /><br />
-    Z:
-    <input
-      type="range"
-      :min="rangeBar.min"
-      :max="rangeBar.max"
-      :step="rangeBar.step"
-      v-model="rangeBar.z"
-    /><br /> -->
-    <div id="three-main" ref="container"></div>
   </div>
 </div>

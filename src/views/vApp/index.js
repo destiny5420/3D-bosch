@@ -67,7 +67,8 @@ export default {
         camera: null,
         control: null,
         box: null
-      }
+      },
+      sloganWords: ["科", "技", "成", "就", "生", "活", "之", "美"]
     };
   },
   methods: {

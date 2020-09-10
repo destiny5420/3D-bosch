@@ -1,11 +1,42 @@
+$slogan-zIndex: 2;
+
 * {
   box-sizing: border-box;
 }
 .main {
+  background-image: linear-gradient(
+    90deg,
+    #bbcbca,
+    rgba(241, 244, 244, 0),
+    #bbcbca
+  );
 }
 
 #app {
   position: relative;
+}
+
+#slogan {
+  user-select: none;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: $slogan-zIndex;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 35%;
+  height: 50px;
+  background-color: green;
+
+  font-family: "Noto Serif TC", serif;
+  font-size: 28px;
+  overflow: hidden;
 }
 
 #console-panel {
