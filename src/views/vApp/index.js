@@ -69,6 +69,7 @@ export default {
         control: null,
         box: null
       },
+      menuWord: ["M", "e", "n", "u"],
       sloganWords: ["科", "技", "成", "就", "生", "活", "之", "美"]
     };
   },

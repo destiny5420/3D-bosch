@@ -112,8 +112,13 @@
         </div>
       </div>
     </div> -->
+    <div id="menu-btn">
+      <div id="menu-circle"></div>
+      <div id="menu-word">
+        <span v-for="(item, index) in menuWord" :key="index">{{ item }}</span>
+      </div>
+    </div>
     <div id="main-content">
-      <div id="three-main" ref="container"></div>
       <div id="slogan">
         <span
           :id="'slogan-' + index"
@@ -122,6 +127,8 @@
           >{{ item }}</span
         >
       </div>
+      <div id="three-main" ref="container"></div>
+      <div id="info-main"></div>
     </div>
   </div>
 </div>
