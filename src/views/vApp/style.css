@@ -12,6 +12,24 @@
   position: relative;
 }
 
+#main-content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#three-main {
+  display: inline-block;
+}
+
 #slogan {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -37,10 +55,15 @@
           align-items: center;
   width: 35%;
   height: 50px;
-  background-color: green;
   font-family: "Noto Serif TC", serif;
   font-size: 28px;
   overflow: hidden;
+  color: gray;
+}
+
+#slogan span {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
 }
 
 #console-panel {

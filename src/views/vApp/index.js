@@ -1,7 +1,8 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import Stats from "stats.js";
+import anime from "animejs/lib/anime.es.js";
 
 export default {
   name: "vApp",
@@ -11,7 +12,7 @@ export default {
     return {
       three: {
         parameter: {
-          canvasWidth: window.innerWidth,
+          canvasWidth: 800,
           canvasHeight: 1080
         },
         models: [
@@ -72,6 +73,7 @@ export default {
     };
   },
   methods: {
+    // Three.js
     init: function() {
       console.log("-- Initialize Function --");
       const vm = this;
@@ -82,7 +84,7 @@ export default {
 
       // set stats
       vm.stats = new Stats();
-      vm.three.container.appendChild(vm.stats.dom);
+      // vm.three.container.appendChild(vm.stats.dom);
 
       // create clock
       vm.three.clock = new THREE.Clock();
@@ -108,7 +110,8 @@ export default {
       const near = 0.1; // the near clipping plane
       const far = 1000; // the far clipping plane
       vm.three.camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-      vm.three.camera.position.set(-5, 2, 11);
+      vm.three.camera.position.set(-5, 5, 12);
+      vm.three.camera.lookAt(new THREE.Vector3(0, 0, 0));
       vm.three.scene.add(vm.three.camera);
 
       // -- create renderer
@@ -126,7 +129,7 @@ export default {
       vm.three.main_view.appendChild(vm.three.renderer.domElement);
 
       // -- create orbit control
-      vm.three.control = new OrbitControls(vm.three.camera, vm.three.container);
+      // vm.three.control = new OrbitControls(vm.three.camera, vm.three.container);
     },
     createLight: function(vm) {
       console.log("-- 2. Create Light --");
@@ -216,8 +219,7 @@ export default {
       const vm = this;
 
       requestAnimationFrame(vm.renderScene); // 產生動畫
-      this.stats.update();
-      //vm.three.box.rotation.y += 0.005; // 令box的Y軸在每格動畫中轉動一點點
+      // vm.stats.update();
 
       vm.objectUpdate();
       vm.lightUpdate();
@@ -257,6 +259,19 @@ export default {
       if (vm.three.animations.grip.mixer) {
         vm.three.animations.grip.mixer.update(time);
       }
+    },
+    // Anime.ju
+    onPlaySlogan: function() {
+      anime({
+        targets: "#slogan span",
+        keyframes: [
+          { translateY: 50, duration: 0 },
+          { translateY: 0, delay: 500, easing: "easeOutExpo" },
+          { translateY: -50, delay: 100, easing: "easeOutExpo" }
+        ],
+        duration: 4000,
+        delay: anime.stagger(50)
+      });
     }
   },
   computed: {},
