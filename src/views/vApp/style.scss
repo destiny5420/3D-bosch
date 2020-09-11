@@ -204,8 +204,9 @@ $menu-btn-zIndex: 1000;
   .about-svg-text {
     z-index: 10;
     @include stroke(white, 1px);
-    fill: white;
-    transition: ease-out 0.2s;
+    fill: transparent;
+    stroke: #fff;
+    transition: ease-out 0.3s;
   }
 
   .is-hover {
@@ -226,6 +227,7 @@ $menu-btn-zIndex: 1000;
     }
 
     .about-svg-text {
+      fill: #fff;
       transform: translateX(25px);
     }
   }

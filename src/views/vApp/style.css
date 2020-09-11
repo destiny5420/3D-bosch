@@ -255,9 +255,10 @@
   z-index: 10;
   stroke: white;
   stroke-width: 1px;
-  fill: white;
-  -webkit-transition: ease-out 0.2s;
-  transition: ease-out 0.2s;
+  fill: transparent;
+  stroke: #fff;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
 }
 
 #about .is-hover .about-btn-icon-arrow {
@@ -281,6 +282,7 @@
 }
 
 #about .is-hover .about-svg-text {
+  fill: #fff;
   -webkit-transform: translateX(25px);
           transform: translateX(25px);
 }
