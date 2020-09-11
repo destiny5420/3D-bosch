@@ -94,7 +94,9 @@ $menu-btn-zIndex: 1000;
 #three-main {
 }
 
-#info-main {
+#about-main {
+  position: relative;
+  // @include border();
   @include size(100%, 1000px);
   // background: rgba(128, 128, 128, 0.425);
 }
@@ -138,6 +140,11 @@ $menu-btn-zIndex: 1000;
     top: 50%;
     transform: translateY(-50%);
     left: 10%;
+
+    // .about-svg-text:not(#Flavor) {
+    //   fill: #fff;
+    //   // transform: translateX(25px);
+    // }
   }
 
   li {
@@ -180,7 +187,7 @@ $menu-btn-zIndex: 1000;
 
   .about-btn-icon-circle {
     @include size(200px, 200px);
-    @include independent("", $main-color, -1);
+    @include independent("", $main-color, 0);
     top: 0;
     left: 0;
 
@@ -192,7 +199,7 @@ $menu-btn-zIndex: 1000;
 
   .about-btn-icon-speed-arrow {
     @include size(100%, 100%);
-    @include independent("", transparent, 0);
+    @include independent("", transparent, 2);
     top: 0;
     left: 0;
 
@@ -209,11 +216,14 @@ $menu-btn-zIndex: 1000;
     transition: ease-out 0.3s;
   }
 
+  .about-fill:not(.un-hover) {
+    fill: #fff;
+  }
+
   .is-hover {
     .about-btn-icon-arrow {
       opacity: 0;
       transform: translateX(10px);
-      transition: linear 0s;
     }
 
     .about-btn-icon-circle {
@@ -226,10 +236,10 @@ $menu-btn-zIndex: 1000;
       opacity: 1;
     }
 
-    .about-svg-text {
-      fill: #fff;
-      transform: translateX(25px);
-    }
+    // .about-svg-text {
+    //   fill: #fff;
+    //   transform: translateX(25px);
+    // }
   }
 
   // Body
@@ -237,5 +247,32 @@ $menu-btn-zIndex: 1000;
     @include size();
     @include independent("", transparent, 10);
     height: 100%;
+  }
+}
+
+#about-product {
+  // @include border();
+  @include size(300px, 300px);
+  @include independent("", transparent, 1);
+
+  top: 50px;
+  right: 200px;
+
+  .product-circle {
+    @include size();
+
+    img {
+      animation: product-rotate 15s linear infinite;
+    }
+  }
+}
+
+@keyframes product-rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
   }
 }

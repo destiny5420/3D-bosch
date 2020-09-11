@@ -290,17 +290,20 @@ export default {
     },
     // Normal
     onMouseEnterHandler: function(index) {
+      this.hoverIndex = index;
       this.info_svg_list[index].classList.add("is-hover");
     },
     onMouseLeaveHandler: function(index) {
+      this.hoverIndex = -1;
       this.info_svg_list[index].classList.remove("is-hover");
     }
   },
   computed: {
     styleAboutText: {
       get: function() {
-        return function() {
-          return {};
+        let vm = this;
+        return {
+          fill: vm.hoverIndex !== -1 ? "#fff" : "transparent"
         };
       }
     }

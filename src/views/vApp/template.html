@@ -119,7 +119,7 @@
       </div>
     </div>
     <div>
-      <div id="my-scrollbar" class="scroll-content">
+      <div id="my-scrollbar" class="scroll-content" data-scroll>
         <div id="main-content">
           <div id="slogan">
             <span
@@ -130,7 +130,12 @@
             >
           </div>
           <div id="three-main" ref="container"></div>
-          <div id="info-main">
+          <div id="about-main">
+            <div id="about-product">
+              <div class="product-circle">
+                <img src="assets/circle01.svg" alt="" />
+              </div>
+            </div>
             <div id="about">
               <ul>
                 <li
@@ -158,7 +163,8 @@
                     <div class="about-btn-body">
                       <svg
                         id="Flavor"
-                        class="about-svg-text"
+                        class="about-svg-text about-fill"
+                        :class="{ 'un-hover': hoverIndex !== 0 && hoverIndex !== -1 }"
                         viewBox="0 0 250 55"
                       >
                         <title>flavor</title>
@@ -215,7 +221,8 @@
                     <div class="about-btn-body">
                       <svg
                         id="Feature"
-                        class="about-svg-text"
+                        class="about-svg-text about-fill"
+                        :class="{ 'un-hover': hoverIndex !== 1 && hoverIndex !== -1 }"
                         viewBox="0 0 250 52"
                       >
                         <title>feature</title>
@@ -277,7 +284,8 @@
                       <!-- Free -->
                       <svg
                         id="Free"
-                        class="about-svg-text"
+                        class="about-svg-text about-fill"
+                        :class="{ 'un-hover': hoverIndex !== 2 && hoverIndex !== -1 }"
                         viewBox="0 0 250 52"
                       >
                         <title>free</title>
