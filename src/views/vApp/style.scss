@@ -96,7 +96,7 @@ $menu-btn-zIndex: 1000;
 
 #info-main {
   @include size(100%, 1000px);
-  background: rgba(128, 128, 128, 0.425);
+  // background: rgba(128, 128, 128, 0.425);
 }
 
 #console-panel {
@@ -124,5 +124,116 @@ $menu-btn-zIndex: 1000;
     display: inline-block;
     width: 120px;
     background-color: transparent;
+  }
+}
+
+#about {
+  position: relative;
+  @include size(80%, 100%);
+
+  ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+  }
+
+  li {
+    cursor: pointer;
+    @include size(500px, 200px);
+    list-style: none;
+
+    > div {
+      position: relative;
+      @include size();
+    }
+  }
+
+  .about-btn-icon {
+    @include size(200px, 200px);
+    @include independent("", transparent, 5);
+    top: -100px;
+    left: -33%;
+
+    transition: ease-in-out 0.2s;
+  }
+
+  .arrow {
+    fill: transparent;
+    stroke: white;
+    z-index: 5;
+  }
+
+  .speed-arrow {
+    fill: white;
+    stroke: transparent;
+  }
+
+  .about-btn-icon-arrow {
+    @include size(200px, 200px);
+    @include independent("", transparent, 1);
+    transition: ease-out 0.15s;
+    opacity: 1;
+  }
+
+  .about-btn-icon-circle {
+    @include size(200px, 200px);
+    @include independent("", $main-color, -1);
+    top: 0;
+    left: 0;
+
+    border-radius: 50%;
+    transition: ease-in-out 0.15s;
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  .about-btn-icon-speed-arrow {
+    @include size(100%, 100%);
+    @include independent("", transparent, 0);
+    top: 0;
+    left: 0;
+
+    transition: ease 0.2s;
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  .about-svg-text {
+    z-index: 10;
+    @include stroke(white, 1px);
+    fill: white;
+    transition: ease-out 0.2s;
+  }
+
+  .is-hover {
+    .about-btn-icon-arrow {
+      opacity: 0;
+      transform: translateX(10px);
+      transition: linear 0s;
+    }
+
+    .about-btn-icon-circle {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+
+    .about-btn-icon-speed-arrow {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+
+    .about-svg-text {
+      transform: translateX(25px);
+    }
+  }
+
+  // Body
+  .about-btn-body {
+    @include size();
+    @include independent("", transparent, 10);
+    height: 100%;
   }
 }

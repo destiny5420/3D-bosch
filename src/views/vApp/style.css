@@ -111,7 +111,6 @@
 #info-main {
   width: 100%;
   height: 1000px;
-  background: rgba(128, 128, 128, 0.425);
 }
 
 #console-panel {
@@ -152,5 +151,147 @@
   display: inline-block;
   width: 120px;
   background-color: transparent;
+}
+
+#about {
+  position: relative;
+  width: 80%;
+  height: 100%;
+}
+
+#about ul {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 10%;
+}
+
+#about li {
+  cursor: pointer;
+  width: 500px;
+  height: 200px;
+  list-style: none;
+}
+
+#about li > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#about .about-btn-icon {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  content: "";
+  background-color: transparent;
+  z-index: 5;
+  top: -100px;
+  left: -33%;
+  -webkit-transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.2s;
+}
+
+#about .arrow {
+  fill: transparent;
+  stroke: white;
+  z-index: 5;
+}
+
+#about .speed-arrow {
+  fill: white;
+  stroke: transparent;
+}
+
+#about .about-btn-icon-arrow {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  content: "";
+  background-color: transparent;
+  z-index: 1;
+  -webkit-transition: ease-out 0.15s;
+  transition: ease-out 0.15s;
+  opacity: 1;
+}
+
+#about .about-btn-icon-circle {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  content: "";
+  background-color: #0c6170;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  -webkit-transition: ease-in-out 0.15s;
+  transition: ease-in-out 0.15s;
+  opacity: 0;
+  -webkit-transform: scale(0.5, 0.5);
+          transform: scale(0.5, 0.5);
+}
+
+#about .about-btn-icon-speed-arrow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  background-color: transparent;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  -webkit-transition: ease 0.2s;
+  transition: ease 0.2s;
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  opacity: 0;
+}
+
+#about .about-svg-text {
+  z-index: 10;
+  stroke: white;
+  stroke-width: 1px;
+  fill: white;
+  -webkit-transition: ease-out 0.2s;
+  transition: ease-out 0.2s;
+}
+
+#about .is-hover .about-btn-icon-arrow {
+  opacity: 0;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  -webkit-transition: linear 0s;
+  transition: linear 0s;
+}
+
+#about .is-hover .about-btn-icon-circle {
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+#about .is-hover .about-btn-icon-speed-arrow {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  opacity: 1;
+}
+
+#about .is-hover .about-svg-text {
+  -webkit-transform: translateX(25px);
+          transform: translateX(25px);
+}
+
+#about .about-btn-body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  background-color: transparent;
+  z-index: 10;
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */

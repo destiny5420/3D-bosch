@@ -73,6 +73,8 @@ export default {
       scrollbar: {
         reference: null
       },
+      hoverIndex: -1,
+      info_svg_list: [],
       menuWord: ["M", "e", "n", "u"],
       sloganWords: ["科", "技", "成", "就", "生", "活", "之", "美"]
     };
@@ -285,16 +287,32 @@ export default {
         duration: 4000,
         delay: anime.stagger(50)
       });
+    },
+    // Normal
+    onMouseEnterHandler: function(index) {
+      this.info_svg_list[index].classList.add("is-hover");
+    },
+    onMouseLeaveHandler: function(index) {
+      this.info_svg_list[index].classList.remove("is-hover");
     }
   },
-  computed: {},
-
+  computed: {
+    styleAboutText: {
+      get: function() {
+        return function() {
+          return {};
+        };
+      }
+    }
+  },
   // life cycle
   beforeCreate: function() {},
   created: function() {},
   beforeMounted: function() {},
   mounted: function() {
     this.init();
+
+    this.info_svg_list = document.querySelectorAll("#about ul li");
   },
   beforeUpdate: function() {},
   updated: function() {},

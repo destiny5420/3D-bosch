@@ -14,3 +14,19 @@ $second-color: red;
   justify-content: $justify-content;
   align-items: $align-items;
 }
+
+@mixin border($width: 1px, $type: solid, $color: black) {
+  border: $width $type $color;
+}
+
+@mixin stroke($color: black, $width: 1px) {
+  stroke: $color;
+  stroke-width: $width;
+}
+
+@mixin independent($content: "", $color: red, $z-index: 1) {
+  position: absolute;
+  content: $content;
+  background-color: $color;
+  z-index: $z-index;
+}
