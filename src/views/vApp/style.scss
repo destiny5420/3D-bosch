@@ -192,7 +192,7 @@ $menu-btn-zIndex: 1000;
     left: 0;
 
     border-radius: 50%;
-    transition: ease-in-out 0.15s;
+    transition: ease-in-out 0.25s;
     opacity: 0;
     transform: scale(0.5, 0.5);
   }
@@ -236,10 +236,9 @@ $menu-btn-zIndex: 1000;
       opacity: 1;
     }
 
-    // .about-svg-text {
-    //   fill: #fff;
-    //   transform: translateX(25px);
-    // }
+    .about-svg-text {
+      transform: translateX(25px);
+    }
   }
 
   // Body
