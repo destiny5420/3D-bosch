@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import Scrollbar from "smooth-scrollbar";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import Stats from "stats.js";
 import anime from "animejs/lib/anime.es.js";
@@ -69,6 +70,9 @@ export default {
         control: null,
         box: null
       },
+      scrollbar: {
+        reference: null
+      },
       menuWord: ["M", "e", "n", "u"],
       sloganWords: ["科", "技", "成", "就", "生", "活", "之", "美"]
     };
@@ -97,6 +101,14 @@ export default {
       vm.createLight(vm);
       vm.createObject(vm);
       vm.renderScene();
+
+      // init scrollbar
+      vm.scrollbar.reference = Scrollbar.init(
+        document.querySelector("#my-scrollbar"),
+        {
+          damping: 0.05
+        }
+      );
     },
     createScene: function(vm) {
       console.log("-- 1. Create Scene --");
@@ -276,6 +288,7 @@ export default {
     }
   },
   computed: {},
+
   // life cycle
   beforeCreate: function() {},
   created: function() {},

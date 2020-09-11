@@ -27,11 +27,17 @@
   font-family: "Open Sans", sans-serif;
 }
 
+#my-scrollbar {
+  width: 100%;
+  height: 1000px;
+  overflow: auto;
+}
+
 #menu-circle {
   display: inline-block;
   width: 10px;
   height: 10px;
-  background-color: #0c6170;
+  background-color: #ff8383;
   margin-right: 10px;
   border-radius: 50%;
 }

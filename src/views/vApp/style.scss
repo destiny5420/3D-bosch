@@ -1,4 +1,4 @@
-$main-color: #0c6170;
+// $main-color: #0c6170;
 $slogan-zIndex: 2;
 $menu-btn-zIndex: 1000;
 
@@ -23,6 +23,12 @@ $menu-btn-zIndex: 1000;
   padding: 10px 10px;
   font-size: 26px;
   font-family: "Open Sans", sans-serif;
+}
+
+#my-scrollbar {
+  width: 100%;
+  height: 1000px;
+  overflow: auto;
 }
 
 #menu-circle {

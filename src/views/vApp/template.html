@@ -118,17 +118,29 @@
         <span v-for="(item, index) in menuWord" :key="index">{{ item }}</span>
       </div>
     </div>
-    <div id="main-content">
-      <div id="slogan">
-        <span
-          :id="'slogan-' + index"
-          v-for="(item, index) in sloganWords"
-          :key="index"
-          >{{ item }}</span
-        >
+    <div>
+      <div id="my-scrollbar" class="scroll-content">
+        <div id="main-content">
+          <div id="slogan">
+            <span
+              :id="'slogan-' + index"
+              v-for="(item, index) in sloganWords"
+              :key="index"
+              >{{ item }}</span
+            >
+          </div>
+          <div id="three-main" ref="container"></div>
+          <div id="info-main">
+            <div id="about"></div>
+          </div>
+        </div>
       </div>
-      <div id="three-main" ref="container"></div>
-      <div id="info-main"></div>
+      <div class="scrollbar-track scrollbar-track-x">
+        <div class="scrollbar-thumb scrollbar-thumb-x"></div>
+      </div>
+      <div class="scrollbar-track scrollbar-track-y">
+        <div class="scrollbar-thumb scrollbar-thumb-y"></div>
+      </div>
     </div>
   </div>
 </div>
