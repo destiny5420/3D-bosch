@@ -28,7 +28,7 @@ $menu-btn-zIndex: 1000;
 }
 
 #my-scrollbar {
-  @include size(100%, 1000px);
+  @include size(100%, 100vh);
   overflow: auto;
 }
 
